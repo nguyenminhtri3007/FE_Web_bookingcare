@@ -97,9 +97,9 @@ class HomeFooter extends Component {
         </div> */}
 
         <p>
-          &copy; <FormattedMessage id="Mọi thắc mắc xin liên hệ Trí Nguyễn" />
+          &copy; <FormattedMessage id="homepage.footer-infor" />
           <a target="blank" href="https://www.facebook.com/MinhTringuyenkma">
-            &#8594;<FormattedMessage id="click-here" /> &#8592;
+            &#8594;<FormattedMessage id="homepage.footer-infor-click-here" /> &#8592;
           </a>
         </p>
       </div>

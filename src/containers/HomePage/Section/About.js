@@ -7,7 +7,7 @@ class About extends Component {
     return (
       <div className="section-share section-about">
         <div className="section-about-header">
-        <FormattedMessage id="homepage.media-talk-about-huynh-minh-duc" />
+        <FormattedMessage id="homepage.media-talk-about-tri" />
         </div>
         <div className="section-about-content">
           <div className="content-left">
@@ -23,7 +23,7 @@ class About extends Component {
           </div>
           <div className="content-right">
             <p>
-                <FormattedMessage id="homepage.media-talk-about-huynh-minh-duc-content" />
+                <FormattedMessage id="homepage.media-talk-about-tri-content" />
             </p>
           </div>
         </div>
