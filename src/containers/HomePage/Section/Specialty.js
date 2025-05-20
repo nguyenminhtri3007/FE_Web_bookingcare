@@ -88,30 +88,6 @@ class Specialty extends Component {
               <div class="d-flex justify-content-center">
                 <button type="button" class="btn btn-primary my-15" onClick={() => this.handleLoadMore()}>{this.props.language=="en" ? "Load more" : "Tải thêm"}</button>
               </div>
-          
-              {/* <div className="section-body">
-                <Slider {...this.props.settings}>
-                  {dataSpecialty &&
-                    dataSpecialty.length > 0 &&
-                    dataSpecialty.map((item, index) => {
-                      return (
-                        <div
-                          className="section-customize specialty-child"
-                          key={index}
-                          onClick={() => this.handleViewDetailSpecialty(item)}
-                        >
-                          <div
-                            className="bg-image section-specialty"
-                            style={{
-                              backgroundImage: `url(${item.image})`,
-                            }}
-                          ></div>
-                          <div className="specialty-name">{item.name}</div>
-                        </div>
-                      );
-                    })}
-                </Slider>
-              </div> */}
             </div>
           </div>
         </div>

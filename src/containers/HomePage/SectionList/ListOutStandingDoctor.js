@@ -5,20 +5,9 @@ import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import Typography from "@material-ui/core/Typography";
-import DraftsIcon from "@material-ui/icons/Drafts";
-import SendIcon from "@material-ui/icons/Send";
-import PriorityHighIcon from "@material-ui/icons/PriorityHigh";
-
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
-import { getAllSpecialty } from "../../../services/userService";
-// import { connect } from "react-redux";
-// import { LANGUAGES } from "../../utils";
-
-// import { changeLanguageApp } from "../../store/actions/appActions";
-// import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
 
@@ -52,10 +41,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  // menuIcon: {
-  //   fontSize: "25px",
-  //   color: "black",
-  // },
+
   bgImageListSpecialty: {
     width: "100px",
     height: "67px",
@@ -123,12 +109,7 @@ const ListOutStandingDoctor = () => {
           {arrDoctors &&
             arrDoctors.length > 0 &&
             arrDoctors.map((item, index) => {
-              let imageBase64 = "";
-              if (item.image) {
-                imageBase64 = new Buffer(item.image, "base64").toString(
-                  "binary"
-                );
-              }
+              let imageSrc = item.image || "";
               let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
               let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
               return (
@@ -138,7 +119,7 @@ const ListOutStandingDoctor = () => {
                       <div
                         className={classes.bgImageListSpecialty}
                         style={{
-                          backgroundImage: `url(${imageBase64})`,
+                          backgroundImage: `url(${imageSrc})`,
                         }}
                       ></div>
                     </ListItemIcon>

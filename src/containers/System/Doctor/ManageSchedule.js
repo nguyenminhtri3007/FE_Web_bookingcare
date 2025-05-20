@@ -169,6 +169,19 @@ class ManageSchedule extends Component {
       }else{
         toast.success("Lưu thông tin thành công!");
       }
+       setTimeout(() => {
+          let data = this.props.allScheduleTime;
+          if (data && data.length > 0) {
+            data = data.map((item) => ({ ...item, isSelected: false }));
+          }
+
+          this.setState({
+            selectedDoctor: {},
+            currentDate: "",
+            rangeTime: data,
+          });
+        }, 3000);
+
     } else {
       if(this.props.language=="en"){
         toast.error("error!");

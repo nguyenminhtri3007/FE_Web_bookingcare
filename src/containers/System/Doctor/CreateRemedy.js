@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 import "./CreateRemedy.scss";
-
 import { toast } from "react-toastify";
 import moment from "moment";
 import localization from "moment/locale/vi"; //su dung chung cho cai mac dinh la tieng viet
@@ -43,6 +42,8 @@ export default function CreateRemedy() {
   const [timeType, setTimeType] = useState("");
   const [doctorName, setDoctorName] = useState("");
   const [reason, setReason] = useState("");
+
+  const navigate = useNavigate();
 
   let { bookingId } = useParams();
 
@@ -146,6 +147,9 @@ export default function CreateRemedy() {
       }else{
         toast.success("Tạo đơn thuốc thành công!");
       }
+      setTimeout(() => {
+    navigate(-1);
+  }, 3000);
     } else {
       setIsShowLoading(true)
       if(language=="en"){

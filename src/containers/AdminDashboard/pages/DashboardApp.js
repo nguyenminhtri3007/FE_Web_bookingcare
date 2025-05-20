@@ -18,6 +18,7 @@ import {
 
 import AppWeeklyRevenue from "../sections/@dashboard/app/AppWeeklyRevenue";
 import { FormattedMessage } from 'react-intl';
+import AppTotalClinics from "../sections/@dashboard/app/AppTotalClinics";
 
 // ----------------------------------------------------------------------
 
@@ -29,17 +30,20 @@ export default function DashboardApp() {
           <Typography variant="h4"><FormattedMessage id={"admin-dashboard.dashboard.greeting"} /></Typography>
         </Box>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={2.4}>
             <AppWeeklyRevenue />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={2.4}>
             <AppNewUsers />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={2.4}>
             <AppTotalHealthAppointmentDone />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={2.4}>
             <AppTotalDoctors />
+          </Grid>
+          <Grid item xs={12} sm={6} md={2.4}>
+          <AppTotalClinics />  
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>

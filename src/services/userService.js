@@ -145,6 +145,10 @@ const getTotalDoctors = () => {
   return axios.get(`/api/get-total-doctor`);
 };
 
+const getTotalClinics = () =>{
+  return axios.get(`/api/get-total-clinics`);
+}
+
 const getTopThreeDoctorOfTheYear = () => {
   return axios.get(`/api/get-top-three-doctors-of-the-year`);
 };
@@ -228,5 +232,6 @@ export {
   editPassword,
   filterRestoreUsers,
   handleRestoreUser,
-  deleteRestoreUser
+  deleteRestoreUser,
+  getTotalClinics
 };

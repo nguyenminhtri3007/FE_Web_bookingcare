@@ -134,6 +134,19 @@ class BookingModal extends Component {
     }
     return "";
   };
+  resetForm = () => {
+  this.setState({
+    patientName: "",
+    phoneNumber: "",
+    email: this.props.userInfo?.email || "",
+    address: "",
+    reason: "",
+    birthday: "",
+    selectedGender: "",
+    doctorId: "",
+    timeType: "",
+  });
+};
 
   handleDoctorName = (dataTime) => {
     let { language } = this.props;
@@ -181,6 +194,7 @@ class BookingModal extends Component {
       }
      
       this.props.closeBookingClose();
+       this.resetForm();
     } 
     else if(res && res.errCode === 3)
     {
@@ -329,7 +343,10 @@ class BookingModal extends Component {
               </button>
               <button
                 className="btn-booking-cancel"
-                onClick={closeBookingClose}
+                onClick={() => {
+                      this.resetForm();
+                     closeBookingClose();
+                   }}               
               >
                 <FormattedMessage id="patient.booking-modal.btnCancel" />
               </button>
